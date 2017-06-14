@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "redux-persist storage engine for react-native-sensitive-info",
   "main": "index.js",
+  "files": ["index.js"],
   "scripts": {
     "format": "prettier --write '**/*.js'",
     "lint": "eslint '**/*.js' --max-warnings 0",
