@@ -1,0 +1,54 @@
+{
+  "name": "redux-persist-sensitive-storage",
+  "version": "0.1.0",
+  "description": "redux-persist storage engine for react-native-sensitive-info",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write '**/*.js'",
+    "lint": "eslint '**/*.js' --max-warnings 0",
+    "precommit": "lint-staged",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingZeal/redux-persist-sensitive-storage.git"
+  },
+  "keywords": [
+    "redux",
+    "redux-persist",
+    "redux-storage",
+    "redux-rehydrate",
+    "react-native",
+    "android",
+    "ios",
+    "keychain",
+    "shared-preferences"
+  ],
+  "author": "Randy Coulman <randy@codingzeal.com> (http://open.codingzeal.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodingZeal/redux-persist-sensitive-storage/issues"
+  },
+  "homepage": "https://github.com/CodingZeal/redux-persist-sensitive-storage#readme",
+  "peerDependencies": {
+    "react-native": "*",
+    "react-native-sensitive-info": "3.x - 5.x"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "3.19.0",
+    "eslint-config-prettier": "^2.1.1",
+    "eslint-config-zeal": "^1.0.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-react-native": "^2.3.2",
+    "husky": "^0.13.4",
+    "lint-staged": "^3.6.1",
+    "prettier": "^1.4.4",
+    "react": "16.0.0-alpha.12",
+    "react-native": "^0.45.1"
+  },
+  "lint-staged": {
+    "*.js": "prettier --list-different"
+  }
+}
