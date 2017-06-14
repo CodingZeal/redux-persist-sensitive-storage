@@ -1,5 +1,8 @@
 # redux-persist-sensitive-storage
 
+[![npm version](https://badge.fury.io/js/redux-persist-sensitive-storage.svg)](https://www.npmjs.com/package/redux-persist-sensitive-storage)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 redux-persist storage engine for react-native-sensitive-info
 
 More details coming soon!
