@@ -11,7 +11,8 @@
     "lint": "eslint '**/*.js' --max-warnings 0",
     "precommit": "lint-staged",
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "validate": "npm-run-all -p lint test"
   },
   "repository": {
     "type": "git",
@@ -51,6 +52,7 @@
     "husky": "^0.13.4",
     "jest": "^20.0.4",
     "lint-staged": "^3.6.1",
+    "npm-run-all": "^4.0.2",
     "prettier": "^1.4.4",
     "react": "16.0.0-alpha.12",
     "react-native": "^0.45.1",
