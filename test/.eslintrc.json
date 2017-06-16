@@ -1,0 +1,7 @@
+{
+  "extends": ["zeal/jest"],
+  "rules": {
+    "arrow-body-style": "off",
+    "global-require": "off"
+  }
+}

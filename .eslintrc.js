@@ -6,5 +6,8 @@ module.exports = {
     "prettier",
     "prettier/react"
   ],
-  root: true
+  root: true,
+  rules: {
+    "callback-return": "off"
+  }
 };

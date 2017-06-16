@@ -29,13 +29,16 @@ export default function(options = {}) {
   });
 
   return {
-    /* eslint-disable callback-return */
     async getItem(key, callback) {
       try {
         // getItem() returns `null` on Android and `undefined` on iOS;
         // explicitly return `null` here as `undefined` causes an exception
         // upstream.
-        const result = (await sensitiveInfo.getItem(key, options)) || null;
+        let result = await sensitiveInfo.getItem(key, options);
+
+        if (typeof result === "undefined") {
+          result = null;
+        }
 
         callback && callback(null, result);
 
@@ -51,7 +54,7 @@ export default function(options = {}) {
         await sensitiveInfo.setItem(key, value, options);
         callback && callback(null);
       } catch (error) {
-        callback(error);
+        callback && callback(error);
         throw error;
       }
     },
@@ -61,7 +64,7 @@ export default function(options = {}) {
         await sensitiveInfo.deleteItem(key, options);
         callback && callback(null);
       } catch (error) {
-        callback(error);
+        callback && callback(error);
         throw error;
       }
     },
@@ -75,7 +78,7 @@ export default function(options = {}) {
 
         return result;
       } catch (error) {
-        callback(error);
+        callback && callback(error);
         throw error;
       }
     }
