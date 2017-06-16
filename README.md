@@ -1,6 +1,7 @@
 # redux-persist-sensitive-storage
 
 [![npm version](https://badge.fury.io/js/redux-persist-sensitive-storage.svg)](https://www.npmjs.com/package/redux-persist-sensitive-storage)
+[![CircleCI](https://circleci.com/gh/CodingZeal/redux-persist-sensitive-storage.svg?style=shield)](https://circleci.com/gh/CodingZeal/redux-persist-sensitive-storage)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 redux-persist storage engine for react-native-sensitive-info
@@ -16,7 +17,7 @@ More details coming soon!
   - [ ] Mention that storage is not (yet) secure on Android, but point at branch on r-n-s-i that adds that.
   - [ ] Contributing
 
-- [ ] Add tests
+- [x] Add tests
 
 - [ ] Test on both iOS and Android
 
