@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "description": "redux-persist storage engine for react-native-sensitive-info",
   "main": "index.js",
-  "files": ["index.js"],
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "format": "prettier --write '**/*.js'",
     "lint": "eslint '**/*.js' --max-warnings 0",
     "precommit": "lint-staged",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "validate": "npm-run-all -p lint test"
   },
   "repository": {
     "type": "git",
@@ -37,17 +41,27 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
     "eslint": "3.19.0",
     "eslint-config-prettier": "^2.1.1",
     "eslint-config-zeal": "^1.0.0",
     "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jest": "^20.0.3",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-react-native": "^2.3.2",
     "husky": "^0.13.4",
+    "jest": "^20.0.4",
     "lint-staged": "^3.6.1",
+    "npm-run-all": "^4.0.2",
     "prettier": "^1.4.4",
     "react": "16.0.0-alpha.12",
-    "react-native": "^0.45.1"
+    "react-native": "^0.45.1",
+    "react-native-sensitive-info": "^5.1.0",
+    "testdouble": "^3.0.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "setupTestFrameworkScriptFile": "<rootDir>/test/setupTests.js"
   },
   "lint-staged": {
     "*.js": "prettier --list-different"
