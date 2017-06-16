@@ -28,8 +28,10 @@ export default function(options = {}) {
     android: Object.keys
   });
 
+  const noop = () => null;
+
   return {
-    async getItem(key, callback) {
+    async getItem(key, callback = noop) {
       try {
         // getItem() returns `null` on Android and `undefined` on iOS;
         // explicitly return `null` here as `undefined` causes an exception
@@ -40,45 +42,45 @@ export default function(options = {}) {
           result = null;
         }
 
-        callback && callback(null, result);
+        callback(null, result);
 
         return result;
       } catch (error) {
-        callback && callback(error);
+        callback(error);
         throw error;
       }
     },
 
-    async setItem(key, value, callback) {
+    async setItem(key, value, callback = noop) {
       try {
         await sensitiveInfo.setItem(key, value, options);
-        callback && callback(null);
+        callback(null);
       } catch (error) {
-        callback && callback(error);
+        callback(error);
         throw error;
       }
     },
 
-    async removeItem(key, callback) {
+    async removeItem(key, callback = noop) {
       try {
         await sensitiveInfo.deleteItem(key, options);
-        callback && callback(null);
+        callback(null);
       } catch (error) {
-        callback && callback(error);
+        callback(error);
         throw error;
       }
     },
 
-    async getAllKeys(callback) {
+    async getAllKeys(callback = noop) {
       try {
         const values = await sensitiveInfo.getAllItems(options);
         const result = extractKeys(values);
 
-        callback && callback(null, result);
+        callback(null, result);
 
         return result;
       } catch (error) {
-        callback && callback(error);
+        callback(error);
         throw error;
       }
     }
