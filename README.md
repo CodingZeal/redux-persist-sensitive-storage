@@ -51,7 +51,6 @@ import createSensitiveStorage from "redux-persist-sensitive-storage";
 
 const store = createStore(
   reducer,
-  undefined,
   compose(
     applyMiddleware(...),
     autoRehydrate()
