@@ -1,6 +1,6 @@
 {
   "name": "redux-persist-sensitive-storage",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "redux-persist storage engine for react-native-sensitive-info",
   "main": "index.js",
   "files": [
