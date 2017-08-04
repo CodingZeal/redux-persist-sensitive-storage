@@ -6,13 +6,15 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-
+          keys:
+            - v1-dependency-cache-{{ checksum "package.json" }}
+            - v1-dependency-cache
       - run: yarn install
 
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: v1-dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
+            - ~/.cache/yarn
 
       - run: yarn validate
