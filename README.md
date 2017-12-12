@@ -17,12 +17,15 @@ You can install this package using either `yarn` or `npm`.  You will also need t
 Using Yarn:
 ```
 yarn add redux-persist-sensitive-storage react-native-sensitive-info
-react-native link react-native-sensitive-info
 ```
 
 Using npm:
 ```
 npm install --save redux-persist-sensitive-storage react-native-sensitive-info
+```
+
+Linking library:
+```
 react-native link react-native-sensitive-info
 ```
 
