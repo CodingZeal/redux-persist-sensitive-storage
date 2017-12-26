@@ -28,7 +28,73 @@ react-native link react-native-sensitive-info
 
 ## Usage
 
-To use redux-persist-sensitive-storage, configure redux-persist according to [its documentation](https://github.com/rt2zz/redux-persist#redux-persist).
+To use redux-persist-sensitive-storage, create a sensitive storage instance using `createSensitiveStorage` and then
+configure redux-persist according to [its documentation](https://github.com/rt2zz/redux-persist#redux-persist) using your instance as the storage argument in the configuration.
+
+`createSensitiveStorage` takes an optional set of configuration options. These are used to configure the keychain service (iOS) and shared preferences name (Android) that react-native-sensitive-info uses.  See [their documentation](https://github.com/mCodex/react-native-sensitive-info#methods) for more information.
+
+### For redux-persist v5.x or later
+
+```js
+import { compose, applyMiddleware, createStore } from "redux";
+import { persistStore, persistCombineReducers } from "redux-persist";
+import createSensitiveStorage from "redux-persist-sensitive-storage";
+import reducers from "./reducers"; // where reducers is an object of reducers
+
+const storage = createSensitiveStorage({
+  keychainService: "myKeychain",
+  sharedPreferencesName: "mySharedPrefs"
+});
+
+const config = {
+  key: "root",
+  storage,
+};
+
+const reducer = persistCombineReducers(config, reducers);
+
+function configureStore () {
+  // ...
+  let store = createStore(reducer);
+  let persistor = persistStore(store);
+
+  return { persistor, store };
+}
+```
+
+You may want to only persist some keys in secure storage, and persist other parts of your state in local storage. If that's the case, you can use redux-persist's [Nested Persists](https://github.com/rt2zz/redux-persist#nested-persists) support.  Your configuration might look something like this: 
+
+```js
+import { AsyncStorage } from "react-native";
+import { combineReducers } from "redux";
+import { persistReducer } from "redux-persist";
+import createSensitiveStorage from "redux-persist-sensitive-storage";
+
+import { mainReducer, tokenReducer } from "./reducers";
+
+const sensitiveStorage = createSensitiveStorage({
+  keychainService: "myKeychain",
+  sharedPreferencesName: "mySharedPrefs"
+});
+
+const mainPersistConfig = {
+  key: "main",
+  storage: AsyncStorage,
+  blacklist: ["someEphemeralKey"]
+};
+
+const tokenPersistConfig = {
+  key: "token",
+  storage: sensitiveStorage
+};
+
+let rootReducer = combineReducers({
+  main: persistReducer(mainPersistConfig, mainReducer),
+  token: persistReducer(tokenPersistConfig, tokenReducer)
+});
+```
+
+### For redux-persist v4.x
 
 Modify the `persistStore` call as follows:
 
@@ -40,9 +106,7 @@ import createSensitiveStorage from "redux-persist-sensitive-storage";
 persistStore(store, { storage: createSensitiveStorage(options) });
 ```
 
-`options` is optional and are used to configure the keychain service (iOS) and shared preferences name (Android) that react-native-sensitive-info uses.  See [the documentation](https://github.com/mCodex/react-native-sensitive-info#methods) for more information.
-
-Here's a full example:
+Here is a more complete example:
 
 ```js
 import { compose, applyMiddleware, createStore } from "redux";
