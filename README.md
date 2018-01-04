@@ -14,17 +14,17 @@ react-native-sensitive-info manages all data stored in Android Shared Preference
 
 You can install this package using either `yarn` or `npm`.  You will also need to install and link [react-native-sensitive-info](https://github.com/mCodex/react-native-sensitive-info).
 
-Using Yarn:
-```
-yarn add redux-persist-sensitive-storage react-native-sensitive-info
-react-native link react-native-sensitive-info
-```
+1. Install modules using `yarn` or `npm`:
 
-Using npm:
-```
-npm install --save redux-persist-sensitive-storage react-native-sensitive-info
-react-native link react-native-sensitive-info
-```
+  `yarn add redux-persist-sensitive-storage react-native-sensitive-info`
+
+  or
+
+  `npm install --save redux-persist-sensitive-storage react-native-sensitive-info`
+
+1. After installing the modules link `react-native-sensitive-info` using the following command:
+
+  `react-native link react-native-sensitive-info`
 
 ## Usage
 
@@ -62,7 +62,7 @@ function configureStore () {
 }
 ```
 
-You may want to only persist some keys in secure storage, and persist other parts of your state in local storage. If that's the case, you can use redux-persist's [Nested Persists](https://github.com/rt2zz/redux-persist#nested-persists) support.  Your configuration might look something like this: 
+You may want to only persist some keys in secure storage, and persist other parts of your state in local storage. If that's the case, you can use redux-persist's [Nested Persists](https://github.com/rt2zz/redux-persist#nested-persists) support.  Your configuration might look something like this:
 
 ```js
 import { AsyncStorage } from "react-native";
