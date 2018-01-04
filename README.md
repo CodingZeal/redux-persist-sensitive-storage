@@ -16,15 +16,13 @@ You can install this package using either `yarn` or `npm`.  You will also need t
 
 1. Install modules using `yarn` or `npm`:
 
-  `yarn add redux-persist-sensitive-storage react-native-sensitive-info`
-
-  or
-
-  `npm install --save redux-persist-sensitive-storage react-native-sensitive-info`
+    `yarn add redux-persist-sensitive-storage react-native-sensitive-info`
+  
+    `npm install --save redux-persist-sensitive-storage react-native-sensitive-info`
 
 1. After installing the modules link `react-native-sensitive-info` using the following command:
 
-  `react-native link react-native-sensitive-info`
+    `react-native link react-native-sensitive-info`
 
 ## Usage
 
