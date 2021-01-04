@@ -56,7 +56,7 @@
     "prettier": "^1.4.4",
     "react": "16.0.0-alpha.12",
     "react-native": "^0.45.1",
-    "react-native-sensitive-info": "^5.1.0",
+    "react-native-sensitive-info": "6.0.0-alpha.9",
     "testdouble": "^3.0.0"
   },
   "jest": {
