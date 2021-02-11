@@ -1,8 +1,9 @@
 {
-  "name": "redux-persist-sensitive-storage",
+  "name": "@meshleteam/redux-persist-sensitive-storage",
   "version": "1.0.0",
   "description": "redux-persist storage engine for react-native-sensitive-info",
   "main": "index.js",
+  "types": "index.d.ts",
   "files": [
     "index.js"
   ],
@@ -16,7 +17,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CodingZeal/redux-persist-sensitive-storage.git"
+    "url": "git+https://github.com/meshleteam/redux-persist-sensitive-storage.git"
+  },
+ "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [
     "redux",
@@ -34,10 +38,10 @@
   "bugs": {
     "url": "https://github.com/CodingZeal/redux-persist-sensitive-storage/issues"
   },
-  "homepage": "https://github.com/CodingZeal/redux-persist-sensitive-storage#readme",
+  "homepage": "https://github.com/meshleteam/redux-persist-sensitive-storage#readme",
   "peerDependencies": {
     "react-native": "*",
-    "react-native-sensitive-info": "3.x - 5.x"
+    "react-native-sensitive-info": "3.x - 6.x"
   },
   "devDependencies": {
     "@types/react-native": "^0.63.48",

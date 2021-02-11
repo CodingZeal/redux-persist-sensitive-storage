@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+if [[ -z $1 ]]; then
+    echo "Please pass a version (see https://classic.yarnpkg.com/en/docs/cli/version/#toc-commands)"
+    exit
+fi
+
+if [[ $1 == v* ]]; then
+    version=$1
+    version=${version:1}
+    yarn version --new-version $version
+else 
+    yarn version --$1
+fi
+git push --tags origin master 
