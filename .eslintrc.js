@@ -1,13 +1,16 @@
 module.exports = {
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: 2015,
+    sourceType: "module",
+  },
   extends: [
-    "zeal",
-    "zeal/react",
-    "zeal/react-native",
-    "prettier",
-    "prettier/react"
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint", 
+    "plugin:prettier/recommended"
   ],
   root: true,
   rules: {
-    "callback-return": "off"
+   "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 };
