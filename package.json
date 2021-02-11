@@ -1,6 +1,6 @@
 {
   "name": "@meshleteam/redux-persist-sensitive-storage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "redux-persist storage engine for react-native-sensitive-info",
   "main": "index.js",
   "types": "index.d.ts",
@@ -19,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/meshleteam/redux-persist-sensitive-storage.git"
   },
- "publishConfig": {
+  "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [
